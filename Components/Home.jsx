@@ -11,7 +11,6 @@ import {
 
 const { width, height } = Dimensions.get('window');
 
-// Define your images
 const images = [
  { id: '1', source: require('./assets/food1.jpg') },
   { id: '2', source: require('./assets/images.jpg') },
@@ -27,18 +26,17 @@ const Home = () => {
       setCurrentIndex(nextIndex);
       scrollViewRef.current.scrollTo({ x: nextIndex * width });
   
-      // If the next index is 0 (first image), set a timeout to reset to the first image after a delay
       if (nextIndex === 0) {
         setTimeout(() => {
           setCurrentIndex(0);
           scrollViewRef.current.scrollTo({ x: 0 });
-        }, 200); // Adjust the delay as needed
+        }, 200);  
       } else {
-        setTimeout(nextSlide, 2000); // Change slide every 2 seconds (adjust as needed)
+        setTimeout(nextSlide, 2000); 
       }
     };
   
-    const timeout = setTimeout(nextSlide, 2000); // Initial slide change
+    const timeout = setTimeout(nextSlide, 2000);
   
     return () => {
       clearTimeout(timeout);
@@ -52,8 +50,7 @@ const Home = () => {
   };
 
   const handleStart = () => {
-    // Implement the logic to navigate to the next screen or perform any desired action
-    // You can use React Navigation or another navigation library for screen navigation.
+    
   };
 
   return (
